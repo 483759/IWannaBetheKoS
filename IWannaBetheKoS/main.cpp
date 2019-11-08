@@ -354,7 +354,7 @@ int tut[50][75] = {
 	1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
 };
 
-void main(int* stage)
+int main()
 {
 
 	char start_enter;  //시작화면에서 튜토리얼로 넘어가기 위한 변수 선언
@@ -428,7 +428,7 @@ void start() //시작화면
 
 }
 
-void move(int* stage) //캐릭터이동함수
+void move(int stage[][75]) //캐릭터이동함수
 {
 	int x = 0, y = 45, i;
 	int cox = 0, coy = 45;
@@ -811,7 +811,7 @@ void tutorial(void)
 
 void gotoxy(int x, int y) //커서이동함수
 {
-	COORD pos = { x, y };
+	COORD pos = { (short)x, (short)y };
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
 }
 
